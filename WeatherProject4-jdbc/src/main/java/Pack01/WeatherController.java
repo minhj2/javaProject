@@ -17,16 +17,7 @@ public class WeatherController {
 		this.wdao = weatherDao;
 	}	
 
-	@RequestMapping("/list")
-	public String weatherlist(Model model, 
-			@RequestParam(value="sint") int sint,
-			@RequestParam(value="eint") int eint
-			) {
-			List<WeatherDto> list = new ArrayList<WeatherDto>();
-			list =wdao.selectAll(sint, eint);
-		model.addAttribute("result", list);
-		return "weatherlist";
-	}
+
 	@RequestMapping("/selectEachpageList")	
 	public String eachpageList(Model model,
 			@RequestParam(value="totcnt") int totcnt,
